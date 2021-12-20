@@ -1,0 +1,7 @@
+<h2><%- ctx.prismicH.asText(slice.primary.gallery_title) %></h2>
+<% slice.items.map(eachImage => { %>
+<img
+	src="<%- eachImage.gallery_image.url %>"
+	alt="<%- eachImage.gallery_image.alt %>"
+/>
+<% }) %>

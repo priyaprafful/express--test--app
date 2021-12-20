@@ -1,0 +1,6 @@
+<% getSlices = ((SliceZone)=> { return SliceZone.map(slice => { if
+(slice.slice_type === 'text_slice') { %> <%- include('./slices/TextSlice.ejs',
+{slice: slice}) %> <% } else if (slice.slice_type === 'image_gallery_slice') {%>
+<%- include('./slices/ImageGallery.ejs', {slice: slice}) %> <% } else {%>
+<h1>No Slices found</h1>
+<% } }) }) %> <%- getSlices(SliceZone)%>

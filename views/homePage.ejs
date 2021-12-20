@@ -1,0 +1,21 @@
+<script
+	async
+	defer
+	src="https://static.cdn.prismic.io/prismic.js?new=true&repo=my-express-website"
+></script>
+
+<h1><%- document.data.example_key_text %></h1>
+<h3>My favorite number is <%- document.data.example_number %></h3>
+<span> <%- ctx.prismicH.asDate(document.data.example_date) %> </span>
+<% const latitude = document.data.example_geopoint.latitude %> <% const
+longitude = document.data.example_geopoint.longitude %>
+
+<p>My location: <%= latitude %>, <%= longitude %></p>
+<img
+	src="<%- document.data.example_image.url %>"
+	alt="<%- document.data.example_image.alt %>"
+/>
+<%- document.data.example_embed.html %> <%-
+ctx.prismicH.asHTML(document.data.example_rich_text) %>
+<h3><%- ctx.prismicH.asText(document.data.example_rich_text) %></h3>
+<%- include("SliceZone", {SliceZone: document.data.body}); %>
